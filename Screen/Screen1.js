@@ -27,7 +27,9 @@ const Screen1 = ({navigation}) => {
         <Text style={{flex:1,alignItems:'center',justifyContent:'center'}}>
         A premium online store for women and their stylish choice
         </Text>
-       <TouchableOpacity style={{justifyContent:'center',alignItems:'center'}}>
+       <TouchableOpacity
+       onPress={() => navigation.navigate('Screen2')}
+        style={{justifyContent:'center',alignItems:'center'}}>
          <View style={{backgroundColor:'black',width:100,borderRadius:20,height:40,justifyContent:'center',alignContent:'center',marginBottom:50}}>
             <Text style={{color:'white',justifyContent:'center',alignContent:'center',marginLeft:10}}>Get Started</Text>
          </View>
