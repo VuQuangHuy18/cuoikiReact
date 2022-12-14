@@ -1,7 +1,7 @@
 import { StyleSheet,ActivityIndicator, FlatList, Text, View,Image,TouchableOpacity } from 'react-native';
 import React, { useEffect, useState ,} from 'react';
 
-const Screen2 = () => {
+const Screen2 = ({navigation}) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
   
@@ -27,7 +27,7 @@ const Screen2 = () => {
     const Item = ({item}) => {
       return (
         <TouchableOpacity style={styles.item}
-        onPress={() => navigation.navigate('Detail',item)}>
+        onPress={() => navigation.navigate('Screen3',item)}>
           <View style={{ flexDirection: "column",padding:10,borderRadius:20,}}>
               <View style={{ marginRight: 20,backgroundColor:'pink',borderRadius:20, }}>
               <View style={{ marginRight: 20,backgroundColor:'pink',borderRadius:20, }}>
@@ -77,7 +77,7 @@ const Screen2 = () => {
 
             </View>
 
-            <View style={{flexDirection:'row'}}>
+            <View style={{flexDirection:'row',borderWidth:2,borderColor:'red'}}>
                 <Text style={styles.testt}>Trending</Text>
                 <Text style={styles.testt}>Popular</Text>
                 <Text style={styles.testt}>We recomnended</Text>
@@ -85,6 +85,7 @@ const Screen2 = () => {
 
 
             <FlatList
+          
         //chieu ngang horiontal={true}
           data={data}
           numColumns={2}
